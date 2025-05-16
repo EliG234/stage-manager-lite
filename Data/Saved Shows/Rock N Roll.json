@@ -1,0 +1,180 @@
+{
+    "mic_inventory": [
+        "Shure sm58",
+        "Audix D2",
+        "DI Box",
+        "Audix D4",
+        "Audix D6",
+        "Shure sm81",
+        "Shure sm57"
+    ],
+    "stageboxes": {
+        "SB1": {
+            "inputs": [
+                "I1",
+                "I2",
+                "I3",
+                "I4"
+            ],
+            "outputs": [
+                "O1",
+                "O2"
+            ]
+        },
+        "SB2": {
+            "inputs": [
+                "I1",
+                "I2",
+                "I3",
+                "I4"
+            ],
+            "outputs": [
+                "O1",
+                "O2"
+            ]
+        },
+        "SB3": {
+            "inputs": [
+                "I1",
+                "I2",
+                "I3",
+                "I4"
+            ],
+            "outputs": [
+                "O1",
+                "O2"
+            ]
+        },
+        "SB4": {
+            "inputs": [
+                "I1",
+                "I2",
+                "I3",
+                "I4"
+            ],
+            "outputs": [
+                "O1",
+                "O2"
+            ]
+        }
+    },
+    "inputs": [
+        {
+            "channel": 1,
+            "name": "Kick",
+            "mic": "Audix D6",
+            "stagebox_input": "SB1-I1",
+            "notes": ""
+        },
+        {
+            "channel": 2,
+            "name": "Snare",
+            "mic": "Shure sm57",
+            "stagebox_input": "SB1-I2",
+            "notes": ""
+        },
+        {
+            "channel": 3,
+            "name": "Tom",
+            "mic": "Audix D2",
+            "stagebox_input": "SB1-I3",
+            "notes": ""
+        },
+        {
+            "channel": 4,
+            "name": "Floor",
+            "mic": "Audix D4",
+            "stagebox_input": "SB1-I4",
+            "notes": ""
+        },
+        {
+            "channel": 5,
+            "name": "OH L",
+            "mic": "Shure sm81",
+            "stagebox_input": "SB2-I1",
+            "notes": ""
+        },
+        {
+            "channel": 6,
+            "name": "OH R",
+            "mic": "Shure sm81",
+            "stagebox_input": "SB2-I2",
+            "notes": ""
+        },
+        {
+            "channel": 7,
+            "name": "Bass",
+            "mic": "DI Box",
+            "stagebox_input": "SB2-I3",
+            "notes": "DI link to AMP"
+        },
+        {
+            "channel": 8,
+            "name": "Gtr",
+            "mic": "Shure sm57",
+            "stagebox_input": "SB2-I4",
+            "notes": "Gtr AMP"
+        },
+        {
+            "channel": 9,
+            "name": "Gtr",
+            "mic": "Shure sm57",
+            "stagebox_input": "SB3-I1",
+            "notes": "Gtr AMP"
+        },
+        {
+            "channel": 10,
+            "name": "Vocal 1",
+            "mic": "Shure sm58",
+            "stagebox_input": "SB3-I2",
+            "notes": ""
+        },
+        {
+            "channel": 11,
+            "name": "Vocal 2",
+            "mic": "Shure sm58",
+            "stagebox_input": "SB3-I3",
+            "notes": ""
+        },
+        {
+            "channel": 14,
+            "name": "",
+            "mic": "Shure sm58",
+            "stagebox_input": "",
+            "notes": ""
+        },
+        {
+            "channel": 15,
+            "name": "",
+            "mic": "Audix D2",
+            "stagebox_input": "",
+            "notes": ""
+        }
+    ],
+    "outputs": [
+        {
+            "mix": 1,
+            "name": "Front",
+            "stagebox_output": "SB1-O1",
+            "notes": "Dual Mons in link"
+        },
+        {
+            "mix": 2,
+            "name": "Bass",
+            "stagebox_output": "SB2-O1",
+            "notes": ""
+        },
+        {
+            "mix": 3,
+            "name": "Drums",
+            "stagebox_output": "SB3-O1",
+            "notes": ""
+        },
+        {
+            "mix": 4,
+            "name": "Gtr",
+            "stagebox_output": "SB4-O1",
+            "notes": ""
+        }
+    ]
+}

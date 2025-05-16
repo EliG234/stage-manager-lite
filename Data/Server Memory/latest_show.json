@@ -1,0 +1,19 @@
+{
+    "inputs": [
+        {
+            "channel": 1,
+            "name": "sdf",
+            "mic": "Shure sm81",
+            "stagebox_input": "SB1-I1",
+            "notes": "sdfsdf"
+        },
+        {
+            "channel": 2,
+            "name": "sdfsdf",
+            "mic": "Shure sm58",
+            "stagebox_input": "SB1-I2",
+            "notes": "sdfsdf"
+        }
+    ],
+    "outputs": []
+}
