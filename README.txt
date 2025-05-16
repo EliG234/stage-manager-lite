@@ -1,73 +1,57 @@
+Stage Manager App
+=================
 
-# Stage Manager Application
+This is a Python-based application designed for stage and FOH engineers to manage microphone inventory, stageboxes, and input/output assignments across a live show. It includes a GUI interface and local server communication for role-based workflows.
 
-## Overview
+----------------------------
+Features
+----------------------------
+- Assign microphones to stage inputs and outputs using dropdown menus.
+- View and edit channel lists in a clean GUI interface.
+- Save and load shows locally (stored in 'Data/Saved Shows').
+- Server memory stores the latest show in 'Data/Server Memory/latest_show.json'.
+- Role selection: STAGE or FOH.
+- Example show provided: "Rock N Roll.json".
 
-This application helps sound engineers and stage managers organize and manage mic inventories, stageboxes, and channel lists for live sound setups. It supports saving/loading show configurations locally and syncing channel lists between a Front of House (FOH) server and Stage client over a network.
+----------------------------
+Running the Application
+----------------------------
+1. Make sure you have Python 3.10 or later installed.
+2. Install required packages (in terminal or PyCharm terminal):
 
-## Features
+   pip install flask requests ttkthemes
 
-- Manage microphone inventory with counts.
-- Manage stageboxes and their inputs/outputs.
-- Build and edit channel lists with mic and stagebox assignments.
-- Save and load show configurations locally under `Data/Saved Shows`.
-- Sync channel list updates over a Flask-based FOH API server.
-- Stage client can fetch and update the current channel list from the FOH server.
-- Simple GUI interface built with Tkinter.
-- Example show file included: **"Rock N Roll"**.
-
-## Directory Structure
-
-```
-Stage-Manager/
-├── Data/
-│   ├── Saved Shows/
-│   │   └── Rock N Roll.json
-│   └── Server Memory/
-│       └── latest_show.json
-├── mic_inventory.py
-├── stagebox_manager.py
-├── show_manager.py
-├── foh_api.py
-├── stage_requests.py
-├── gui.py
-├── main.py  # CLI interface (optional)
-└── README.txt
-```
-
-## Setup and Installation
-
-1. Ensure Python 3.7+ is installed.
-2. Install required packages:
-   ```bash
-   pip install flask requests
-   ```
-3. Run the FOH API server:
-   ```bash
+3. Start the local server:
+   In one terminal window or tab, run:
    python foh_api.py
-   ```
-4. Run the GUI client:
-   ```bash
+
+   This will start a Flask server on http://localhost:5000 used to send/receive show data.
+
+4. Launch the GUI:
+   In another terminal window or run configuration, launch the GUI:
    python gui.py
-   ```
 
-## Usage
+----------------------------
+File Structure
+----------------------------
 
-- Use the GUI to select your role (FOH or Stage).
-- FOH user can create and save shows, which are stored locally.
-- Stage user can fetch the latest channel list from the FOH server, make updates, and send changes back.
-- Save shows under `Data/Saved Shows` to keep different setups.
-- The latest channel list in the server is saved under `Data/Server Memory/latest_show.json`.
+Stage-Manager/
+│
+├── gui.py                  # GUI application entry point
+├── show_manager.py         # Logic for saving/loading show data
+├── foh_api.py              # Local Flask server for channel data sync
+├── stage_requests.py       # Client interface to send/fetch data from server
+│
+├── Data/
+│   ├── Saved Shows/        # Local saved shows (e.g. "Rock N Roll.json")
+│   └── Server Memory/      # Server memory file (latest_show.json)
+│
+├── README.txt              # You're reading it!
 
-## Example Show File
-
-An example show file named **"Rock N Roll"** is included in the `Data/Saved Shows` folder to demonstrate the format and usage.
-
-## License
-
-MIT License
-
----
-
-For questions or issues, please contact the developer.
-
+----------------------------
+Notes
+----------------------------
+- Make sure to run both the server and GUI simultaneously for full functionality.
+- Shows are saved as .json files and can be shared or backed up easily.
+- If any microphone is missing or invalid, saving will prompt for corrections.
+- The server stores the *latest* show to be retrieved or overwritten as needed.
